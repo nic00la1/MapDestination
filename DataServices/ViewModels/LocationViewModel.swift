@@ -37,6 +37,24 @@ class LocationViewModel : ObservableObject {
         let locations = LocationDataService.locations
         self.locations = locations
         self.mapLocation = locations.first!
+        
+        self.updateMapRegion(location : locations.first!)
+    }
+    
+    // MARK: - Private Methods
+    
+    private func updateMapRegion(location: Location) {
+        withAnimation(.easeInOut) {
+            mapRegion = MKCoordinateRegion(center: mapLocation.coordinates, span: mapSpan)
+        }
+    }
+    
+    // MARK: - Actions
+    func toggleLocationList() {
+        withAnimation(.easeInOut) {
+            showLocationList.toggle()
+        }
     }
 }
 
+    
