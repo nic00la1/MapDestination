@@ -62,16 +62,17 @@ class LocationDataService {
             ],
             link: "https://en.wikipedia.org/wiki/Eiffel_Tower"),
         
-        // MARK: - Eiffel Tower
+        // MARK: - Louvre Museum
         Location(
-            name: "Eiffel Tower",
+            name: "Louvre Museum",
             cityName: "Paris",
-            coordinates: CLLocationCoordinate2D(latitude: 48.8584, longitude: 2.2945),
-            description: "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower. Locally nicknamed 'La dame de fer', it was constructed as the centerpiece of the 1889 World's Fair and was initially criticised by some of France's leading artists and intellectuals for its design, it has become a global cultural icon of France and one of the most recognisable structures in the world.",
+            coordinates: CLLocationCoordinate2D(latitude: 48.8606, longitude: 2.3376),
+            description: "The Louvre, or the Louvre Museum, is the world's most visited museum and a historic monument in Paris, France. It is the home of some of the best-known works of art, including the Mona Lisa and Venus de Milo. A central landmark of the city, is it located on the Right Bank of the Seine in the city's 1st arrondissement.",
             imageNames: [
-            "paris-eiffeltower-1",
-            "paris-eiffeltower-2"
+            "paris-louvre-1",
+            "paris-louvre-2",
+            "paris-louvre-3"
             ],
-            link: "https://en.wikipedia.org/wiki/Eiffel_Tower"),
+            link: "https://en.wikipedia.org/wiki/Louvre"),
     ]
 }
