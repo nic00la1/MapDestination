@@ -83,10 +83,10 @@ class LocationViewModel : ObservableObject {
             return
         }
         
-        // next index is valid
+        // prev index is valid
         
-        let nextLocation = locations[prevIndex]
-        showNextLocation(location: nextLocation)
+        let prevLocation = locations[prevIndex]
+        showNextLocation(location: prevLocation)
     }
     
     func nextButtonPressed() {
@@ -102,10 +102,10 @@ class LocationViewModel : ObservableObject {
         let nextIndex = currentIndex + 1
         guard locations.indices.contains(nextIndex) else {
             // Next index is not valid
-            // Restart from last
+            // Restart from zero
             
-            guard let lastLocation = locations.last else { return }
-            showNextLocation(location: lastLocation)
+            guard let firstLocation = locations.first else { return }
+            showNextLocation(location: firstLocation)
             return
         }
         
