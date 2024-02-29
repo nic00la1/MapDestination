@@ -14,7 +14,19 @@ struct LocationMapAnnotationView: View {
     
     // MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            // map icon with circle background
+            Image(systemName: "map.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 30, height: 30)
+                .font(.headline)
+                .foregroundStyle(.white)
+                .padding(6)
+                .background(accentColor)
+                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+            
+        }
     }
 }
 
