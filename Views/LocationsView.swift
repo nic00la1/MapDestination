@@ -18,6 +18,14 @@ struct LocationsView: View {
         ZStack {
             mapLayer
                 .ignoresSafeArea()
+            
+            VStack {
+                // Header Section
+                header
+                    .padding()
+                    .frame(maxWidth: maxWithForIpad)
+                Spacer()
+            }
         }
     }
 }
@@ -45,5 +53,26 @@ extension LocationsView {
         }
     }
     
+    // MARK: - Header
+    private var header: some View {
+        VStack {
+            Button(action: vm.toggleLocationList) {
+                Text(vm.mapLocation.name + ", " + vm.mapLocation.cityName)
+                    .font(.title2)
+                    .fontWeight(.black)
+                    .foregroundColor(.primary)
+                    .frame(height: 55)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .animation(.none, value: vm.mapLocation)
+                    .overlay(alignment: .leading) {
+                        Image(systemName: "arrow.down")
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                            .padding()
+                            .rotationEffect(.degrees(vm.showLocationList ? 180 : 0))
+                    }
+            }
+        }
+    }
     
 }
