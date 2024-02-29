@@ -24,6 +24,7 @@ struct LocationsView: View {
 
 #Preview {
     LocationsView()
+        .environmentObject(LocationViewModel())
 }
 
 extension LocationsView {
@@ -35,8 +36,14 @@ extension LocationsView {
             location in
             MapAnnotation(coordinate: location.coordinates) {
                 LocationMapAnnotationView()
-                    .
+                    .scaleEffect(vm.mapLocation == location ? 1 : 0.7)
+                    .shadow(radius: 10)
+                    .onTapGesture {
+                        vm.showNextLocation(location: location)
+                    }
             }
         }
     }
+    
+    
 }

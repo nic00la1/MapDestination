@@ -15,7 +15,7 @@ struct LocationMapAnnotationView: View {
     // MARK: - Body
     var body: some View {
         VStack(spacing: 0) {
-            // map icon with circle background
+            // Map icon with circle background
             Image(systemName: "map.circle.fill")
                 .resizable()
                 .scaledToFit()
@@ -26,6 +26,15 @@ struct LocationMapAnnotationView: View {
                 .background(accentColor)
                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             
+            // Triangle shape below the map
+            Image(systemName: "triangle.fill")
+                .resizable()
+                .scaledToFit()
+                .foregroundStyle(accentColor)
+                .frame(width: 10, height: 10)
+                .rotationEffect(.degrees(180))
+                .offset(y: -3)
+                .padding(.bottom, 40)
         }
     }
 }
