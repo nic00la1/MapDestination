@@ -72,7 +72,14 @@ extension LocationsView {
                             .rotationEffect(.degrees(vm.showLocationList ? 180 : 0))
                     }
             }
+            // show location list if enabled
+            if vm.showLocationList{
+             //   LocationsListView()
+            }
         }
+        .background(.thickMaterial)
+        .cornerRadius(10)
+        .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 15)
     }
     
 }
