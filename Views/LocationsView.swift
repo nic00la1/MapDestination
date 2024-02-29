@@ -82,4 +82,16 @@ extension LocationsView {
         .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 15)
     }
     
+    // MARK: - Location Previews
+    
+    private var locationPreviewsView : some View {
+        ZStack {
+            ForEach(vm.locations) {
+                location in
+                if vm.mapLocation == location {
+                    // locationPreviewView
+                }
+            }
+        }
+    }
 }
