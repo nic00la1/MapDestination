@@ -20,8 +20,11 @@ struct LocationsListView: View {
                 } label: {
                     listRowView(location: location)
                 }
+                .padding(.vertical, 4)
+                .listRowBackground(Color.clear)
             }
         }
+        .listStyle(.plain)
     }
 }
 
@@ -42,6 +45,17 @@ extension LocationsListView {
                     .frame(width: 50, height: 50)
                     .cornerRadius(10)
             }
+            
+            VStack(alignment: .leading) {
+                // Location Name
+                Text(location.name)
+                    .font(.headline)
+                
+                // Location City Name
+                Text(location.cityName)
+                    .font(.subheadline)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }

@@ -74,7 +74,7 @@ extension LocationsView {
             }
             // show location list if enabled
             if vm.showLocationList{
-             //   LocationsListView()
+                LocationsListView()
             }
         }
         .background(.thickMaterial)
