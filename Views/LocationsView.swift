@@ -25,6 +25,8 @@ struct LocationsView: View {
                     .padding()
                     .frame(maxWidth: maxWithForIpad)
                 Spacer()
+                
+                locationPreviewStack
             }
         }
     }
@@ -84,12 +86,18 @@ extension LocationsView {
     
     // MARK: - Location Previews
     
-    private var locationPreviewsView : some View {
+    private var locationPreviewStack : some View {
         ZStack {
             ForEach(vm.locations) {
                 location in
                 if vm.mapLocation == location {
-                    // locationPreviewView
+                    LocationPreviewView(location: location)
+                        .shadow(color: .black.opacity(0.3), radius: 20)
+                        .padding()
+                        .frame(maxWidth: maxWithForIpad)
+                        .frame(maxWidth: .infinity)
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .trailing)))
+                    
                 }
             }
         }
