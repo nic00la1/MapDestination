@@ -17,6 +17,7 @@ struct LocationPreviewView: View {
         HStack(alignment: .bottom, spacing: 0) {
             VStack(alignment: .leading, spacing: 16) {
                 imageSection
+                titleSection
             }
         }
     }
@@ -49,5 +50,15 @@ extension LocationPreviewView {
         .cornerRadius(10)
     }
     
+    // MARK: - Title Section
     
+    private var titleSection : some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(location.name)
+                .font(.title2.bold())
+            Text(location.cityName)
+                .font(.subheadline)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
 }
