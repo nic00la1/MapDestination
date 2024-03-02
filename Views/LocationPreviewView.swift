@@ -19,8 +19,12 @@ struct LocationPreviewView: View {
                 imageSection
                 titleSection
             }
-            VStack(spacing: 0) {
+            VStack(spacing: 8) {
                 learnMoreButton
+                HStack(spacing: 5) {
+                    prevButton
+                    nextButton
+                }
             }
         }
     }
@@ -75,5 +79,27 @@ extension LocationPreviewView {
                 .frame(width: 125, height: 35)
         }
         .buttonStyle(.borderedProminent)
+    }
+    
+    // MARK: - Next Button
+    private var nextButton : some View {
+        Button {
+            vm.nextButtonPressed()
+        } label: {
+            Text("Next")
+                .frame(width: 50, height: 35)
+        }
+        .buttonStyle(.bordered)
+    }
+    
+    // MARK: - Prev Button
+    private var prevButton : some View {
+        Button {
+            vm.prevButtonPressed()
+        } label: {
+            Text("Prev")
+                .frame(width: 50, height: 35)
+        }
+        .buttonStyle(.bordered)
     }
 }
