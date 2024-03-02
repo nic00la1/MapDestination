@@ -19,6 +19,9 @@ struct LocationPreviewView: View {
                 imageSection
                 titleSection
             }
+            VStack(spacing: 0) {
+                learnMoreButton
+            }
         }
     }
 }
@@ -60,5 +63,17 @@ extension LocationPreviewView {
                 .font(.subheadline)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    // MARK: - Learn More Button
+    
+    private var learnMoreButton : some View {
+        Button {
+            vm.sheetLocation = location
+        } label: {
+            Text("Learn More")
+                .frame(width: 125, height: 35)
+        }
+        .buttonStyle(.borderedProminent)
     }
 }
