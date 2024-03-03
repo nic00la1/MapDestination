@@ -32,7 +32,7 @@ struct LocationsView: View {
         // Sheet for location Details View
         .sheet(item: $vm.sheetLocation) {
             location in
-            // 
+            LocationDetailView(location: location)
         }
     }
 }
