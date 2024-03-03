@@ -22,8 +22,19 @@ struct LocationDetailView: View {
                 
                 VStack(alignment: .leading, spacing: 16) {
                     titleSection
+                    Divider()
+                    descriptionSection
+                    Divider()
+                    
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
             }
+        }
+        .ignoresSafeArea()
+        .background(.ultraThinMaterial)
+        .overlay(alignment: .topLeading) {
+            
         }
     }
 }
@@ -61,6 +72,23 @@ extension LocationDetailView {
             Text(location.cityName)
                 .font(.title3)
                 .foregroundColor(.secondary)
+        }
+    }
+    
+    // MARK: - Description Section
+    private var descriptionSection : some View {
+        VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(location.description)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                
+                if let url = URL(string: location.link) {
+                    Link("Read More on Wikipedia", destination: url)
+                        .font(.headline)
+                        .tint(.blue)
+                }
+            }
         }
     }
 }
