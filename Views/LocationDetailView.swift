@@ -18,6 +18,11 @@ struct LocationDetailView: View {
         ScrollView {
             VStack {
                 imageSection
+                    .shadow(color: .black.opacity(0.3), radius: 20, y: 10)
+                
+                VStack(alignment: .leading, spacing: 16) {
+                    titleSection
+                }
             }
         }
     }
@@ -43,5 +48,19 @@ extension LocationDetailView {
         }
         .frame(height: 500)
         .tabViewStyle(.page)
+        
+        
+    }
+    // MARK: - Title Section
+    
+    private var titleSection : some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(location.name)
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+            Text(location.cityName)
+                .font(.title3)
+                .foregroundColor(.secondary)
+        }
     }
 }
