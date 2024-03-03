@@ -35,7 +35,7 @@ struct LocationDetailView: View {
         .ignoresSafeArea()
         .background(.ultraThinMaterial)
         .overlay(alignment: .topLeading) {
-            
+            backButton
         }
     }
 }
@@ -108,5 +108,22 @@ extension LocationDetailView {
             .allowsHitTesting(false)
             .aspectRatio(1, contentMode: .fit)
             .cornerRadius(30)
+    }
+    
+    // MARK: - Back Button
+    
+    private var backButton : some View {
+        Button {
+            vm.sheetLocation = nil
+        } label: {
+            Image(systemName: "xmark")
+                .font(.headline)
+                .padding(16)
+                .foregroundColor(.primary)
+                .background(.thickMaterial)
+                .cornerRadius(10)
+                .shadow(radius: 4)
+                .padding()
+        }
     }
 }
